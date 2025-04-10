@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqf0i3f32d74n"]
+
+[sub_resource type="GDScript" id="GDScript_gaygu"]
+script/source = "extends CanvasLayer
+
+
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+func _process(delta: float) -> void:
+	pass
+
+func _show_komodo(tower_upgrades, tower_scale):
+	var img = ImageTexture.create_from_image(Image.load_from_file(\"res://komodo_dragon//komodo-dragon.png\"))
+	$Panel/Sprite2D.texture = img
+	self.visible = true
+
+func _show_blue_dragon(tower_upgrades, tower_scale):
+	var img = ImageTexture.create_from_image(Image.load_from_file(\"res://Blue dragon//komodo-dragon.png\"))
+	$Panel/Sprite2D.texture = img
+	self.visible = true
+"
+
+[node name="UpgradeGui" type="CanvasLayer"]
+script = SubResource("GDScript_gaygu")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 584.0
+offset_bottom = 106.0
+size_flags_vertical = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]

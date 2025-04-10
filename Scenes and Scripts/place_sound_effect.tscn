@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba4xsymc0kfh3"]
+
+[ext_resource type="AudioStream" uid="uid://cxil6al20q4cn" path="res://sound/place-100513.mp3" id="1_pwp5a"]
+
+[node name="PlaceSoundEffect" type="AudioStreamPlayer2D"]
+scale = Vector2(1.01488, 0.993423)
+stream = ExtResource("1_pwp5a")
+volume_db = 20.0

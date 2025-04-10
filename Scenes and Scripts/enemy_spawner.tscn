@@ -1,0 +1,94 @@
+[gd_scene load_steps=2 format=3 uid="uid://djorglcqkct68"]
+
+[ext_resource type="Script" path="res://Scenes and Scripts/enemy_spawner.gd" id="1_0iab1"]
+
+[node name="EnemySpawner" type="Node2D"]
+script = ExtResource("1_0iab1")
+
+[node name="SnakeNode1" type="Marker2D" parent="."]
+position = Vector2(1173, 464)
+
+[node name="SnakeNode2" type="Marker2D" parent="."]
+position = Vector2(1141, 467)
+
+[node name="SnakeNode3" type="Marker2D" parent="."]
+position = Vector2(1171, 280)
+
+[node name="SnakeNode4" type="Marker2D" parent="."]
+position = Vector2(1141, 278)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(1167, 107)
+
+[node name="Marker2D6" type="Marker2D" parent="."]
+position = Vector2(1166, 162)
+
+[node name="Marker2D7" type="Marker2D" parent="."]
+position = Vector2(1167, 224)
+
+[node name="Marker2D13" type="Marker2D" parent="."]
+position = Vector2(1173, 520)
+
+[node name="Marker2D17" type="Marker2D" parent="."]
+position = Vector2(1170, 560)
+
+[node name="Marker2D19" type="Marker2D" parent="."]
+position = Vector2(1168, 58)
+
+[node name="Marker2D21" type="Marker2D" parent="."]
+position = Vector2(1138, 99)
+
+[node name="Marker2D24" type="Marker2D" parent="."]
+position = Vector2(1135, 154)
+
+[node name="Marker2D25" type="Marker2D" parent="."]
+position = Vector2(1137, 214)
+
+[node name="Marker2D32" type="Marker2D" parent="."]
+position = Vector2(1141, 522)
+
+[node name="Marker2D34" type="Marker2D" parent="."]
+position = Vector2(1142, 557)
+
+[node name="Marker2D38" type="Marker2D" parent="."]
+position = Vector2(1135, 52)
+
+[node name="RedDragonSpawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="SnakeSpawnTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="PiranaSpawnTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="RiverNode2" type="Marker2D" parent="."]
+position = Vector2(1174, 383)
+
+[node name="RiverNode3" type="Marker2D" parent="."]
+position = Vector2(1177, 348)
+
+[node name="RiverNode4" type="Marker2D" parent="."]
+position = Vector2(1141, 382)
+
+[node name="RiverNode5" type="Marker2D" parent="."]
+position = Vector2(1143, 348)
+
+[node name="RiverNode6" type="Marker2D" parent="."]
+position = Vector2(1112, 382)
+
+[node name="RiverNode7" type="Marker2D" parent="."]
+position = Vector2(1114, 348)
+
+[connection signal="timeout" from="RedDragonSpawnTimer" to="." method="_on_red_dragon_spawn_timer_timeout"]
+[connection signal="timeout" from="SnakeSpawnTimer" to="." method="_on_snake_spawn_timer_timeout"]
+[connection signal="timeout" from="SnakeSpawnTimer" to="." method="_on_red_dragon_spawn_timer_timeout"]
+[connection signal="timeout" from="SnakeSpawnTimer" to="." method="_on_pirana_spawn_timer_timeout"]
+[connection signal="timeout" from="PiranaSpawnTimer" to="." method="_on_red_dragon_spawn_timer_timeout"]
+[connection signal="timeout" from="PiranaSpawnTimer" to="." method="_on_pirana_spawn_timer_timeout"]

@@ -1,0 +1,200 @@
+[gd_scene load_steps=25 format=3 uid="uid://dblklnm0hpdve"]
+
+[ext_resource type="Texture2D" uid="uid://bah5w8w5joxbs" path="res://Scenes and Scripts/komodo_dragon/komodo-dragon-slash.png" id="1_2lrrf"]
+[ext_resource type="Script" path="res://Scenes and Scripts/komodo_dragon/komodo_dragon_tower.gd" id="1_p8vh7"]
+[ext_resource type="Texture2D" uid="uid://vthgvuqluckx" path="res://Scenes and Scripts/komodo_dragon/komodo-dragon.png" id="3_c260m"]
+[ext_resource type="AudioStream" uid="uid://bnnfbpahl61y2" path="res://sound/slash1-94367.mp3" id="4_hyaq2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_soi7o"]
+atlas = ExtResource("1_2lrrf")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfs25"]
+atlas = ExtResource("1_2lrrf")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mr35f"]
+atlas = ExtResource("1_2lrrf")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2txuh"]
+atlas = ExtResource("1_2lrrf")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v60fl"]
+atlas = ExtResource("1_2lrrf")
+region = Rect2(256, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgo0n"]
+atlas = ExtResource("1_2lrrf")
+region = Rect2(320, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3n6vs"]
+atlas = ExtResource("1_2lrrf")
+region = Rect2(384, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idof4"]
+atlas = ExtResource("1_2lrrf")
+region = Rect2(448, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sv5bj"]
+atlas = ExtResource("1_2lrrf")
+region = Rect2(512, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5231l"]
+atlas = ExtResource("1_2lrrf")
+region = Rect2(576, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d62x0"]
+atlas = ExtResource("1_2lrrf")
+region = Rect2(640, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6svje"]
+atlas = ExtResource("1_2lrrf")
+region = Rect2(704, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3o8h"]
+atlas = ExtResource("1_2lrrf")
+region = Rect2(768, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xn7kc"]
+atlas = ExtResource("3_c260m")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mhq0c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_soi7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfs25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr35f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2txuh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v60fl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgo0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3n6vs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idof4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sv5bj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5231l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d62x0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6svje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3o8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_soi7o")
+}],
+"loop": false,
+"name": &"FurySlash",
+"speed": 40.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xn7kc")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4m5c"]
+size = Vector2(23, 13)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4rwax"]
+radius = 32.3351
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4lamy"]
+radius = 9.33333
+height = 28.6667
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhc7c"]
+bg_color = Color(1, 0.101961, 0, 1)
+corner_radius_top_left = 450
+corner_radius_top_right = 450
+corner_radius_bottom_right = 450
+corner_radius_bottom_left = 450
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tke0d"]
+size = Vector2(7.66667, 17.3333)
+
+[node name="KomodoDragonTower" type="StaticBody2D"]
+z_index = 1
+scale = Vector2(3, 3)
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_p8vh7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(15, 0)
+sprite_frames = SubResource("SpriteFrames_mhq0c")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_o4m5c")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_4rwax")
+
+[node name="SlashAttackTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(23.3333, -2)
+shape = SubResource("CapsuleShape2D_4lamy")
+
+[node name="VisibilityPlacementArea" type="Panel" parent="."]
+modulate = Color(0, 0, 0, 0.313726)
+offset_left = -32.3333
+offset_top = -31.6667
+offset_right = 31.6667
+offset_bottom = 32.3333
+theme_override_styles/panel = SubResource("StyleBoxFlat_jhc7c")
+
+[node name="Slash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_hyaq2")
+
+[node name="TowerDetectionArea" type="Area2D" parent="."]
+process_mode = 3
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TowerDetectionArea"]
+position = Vector2(-0.333334, 0.166666)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_tke0d")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="SlashAttackTimer" to="." method="_on_slash_attack_timer_timeout"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

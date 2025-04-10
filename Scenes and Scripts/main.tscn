@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://dobnq6a7tfhrc"]
+
+[ext_resource type="PackedScene" uid="uid://djorglcqkct68" path="res://Scenes and Scripts/enemy_spawner.tscn" id="1_ccbbl"]
+[ext_resource type="Script" path="res://Scenes and Scripts/main.gd" id="1_uoen1"]
+[ext_resource type="Texture2D" uid="uid://cktvblc2ow78q" path="res://Game Assets/GMTK game background (1).png" id="2_lqkcm"]
+[ext_resource type="PackedScene" uid="uid://34sqg2qpy6j3" path="res://Scenes and Scripts/dragons_lair.tscn" id="3_sl7a0"]
+[ext_resource type="PackedScene" uid="uid://d4jtw0jd8jiei" path="res://Scenes and Scripts/ui.tscn" id="5_hadpl"]
+[ext_resource type="PackedScene" uid="uid://c2ec5x0jyxu04" path="res://Scenes and Scripts/bg_music.tscn" id="6_g4rr8"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_uoen1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -2
+offset_right = 1153.0
+offset_bottom = 650.0
+size_flags_vertical = 0
+texture = ExtResource("2_lqkcm")
+
+[node name="EnemySpawner" parent="." instance=ExtResource("1_ccbbl")]
+
+[node name="DragonsLair" parent="." instance=ExtResource("3_sl7a0")]
+position = Vector2(80, 357)
+
+[node name="Reptiles" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="UI" parent="." instance=ExtResource("5_hadpl")]
+
+[node name="PlaceableArea" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="LandArea1" type="CollisionPolygon2D" parent="PlaceableArea"]
+position = Vector2(1, 2)
+polygon = PackedVector2Array(452, 15, 24, 16, 8, 313, 66, 327, 157, 279, 331, 297, 350, 311, 384, 318, 530, 304, 574, 314, 765, 312, 1009, 296, 1028, 296, 1037, 27, 787, 22, 763, 84, 774, 102, 779, 115, 829, 125, 839, 147, 862, 174, 859, 204, 834, 240, 823, 267, 761, 289, 679, 243, 662, 221, 620, 248, 586, 234, 562, 188, 576, 156, 560, 150, 538, 89, 497, 67, 455, 22)
+
+[node name="LandArea2" type="CollisionPolygon2D" parent="PlaceableArea"]
+polygon = PackedVector2Array(16, 437, 38, 446, 192, 422, 424, 436, 518, 450, 587, 446, 647, 460, 676, 442, 916, 438, 1034, 405, 1033, 637, 651, 639, 640, 582, 597, 548, 559, 547, 537, 562, 513, 557, 463, 535, 423, 515, 381, 504, 351, 509, 319, 541, 299, 572, 275, 605, 261, 631, 248, 641, 203, 638, 126, 625, 90, 635, 15, 614)
+
+[node name="WaterArea1" type="CollisionPolygon2D" parent="PlaceableArea"]
+polygon = PackedVector2Array(472, 0, 770, -1, 760, 44, 743, 91, 776, 129, 800, 137, 810, 159, 840, 171, 847, 196, 820, 225, 810, 253, 787, 260, 775, 267, 725, 243, 718, 217, 688, 214, 667, 190, 616, 224, 582, 198, 586, 166, 601, 163, 575, 128, 569, 91, 561, 71, 536, 57, 516, 42)
+
+[node name="WaterArea2" type="CollisionPolygon2D" parent="PlaceableArea"]
+polygon = PackedVector2Array(292, 645, 627, 650, 621, 587, 588, 558, 563, 556, 536, 578, 500, 568, 434, 542, 400, 522, 371, 519, 360, 543, 320, 572, 317, 587, 295, 606, 286, 636)
+
+[node name="BGMusic" parent="." instance=ExtResource("6_g4rr8")]
+
+[connection signal="gui_input" from="TextureRect" to="." method="_on_texture_rect_gui_input"]

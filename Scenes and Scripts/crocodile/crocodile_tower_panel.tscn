@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://btaca3ms83p7o"]
+
+[ext_resource type="Script" path="res://Scenes and Scripts/crocodile/crocodile_tower_panel.gd" id="1_j801p"]
+[ext_resource type="Texture2D" uid="uid://cpumx7qd0oobx" path="res://Scenes and Scripts/crocodile/croc_idle.png" id="2_ndrju"]
+[ext_resource type="Texture2D" uid="uid://bnux0463yu0f2" path="res://Game Assets/flying_dragon-1.1/blue_dragon_scale.png" id="3_h3rle"]
+[ext_resource type="PackedScene" uid="uid://ba4xsymc0kfh3" path="res://Scenes and Scripts/place_sound_effect.tscn" id="4_cyd55"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cbdg1"]
+font_size = 20
+
+[node name="CrocodileTowerPanel" type="Panel"]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_j801p")
+
+[node name="CrocIdle" type="Sprite2D" parent="."]
+position = Vector2(38, 3)
+scale = Vector2(0.676752, 0.676752)
+texture = ExtResource("2_ndrju")
+hframes = 6
+
+[node name="TowerPrice" type="Label" parent="CrocIdle"]
+offset_left = -50.24
+offset_top = -2.95529
+offset_right = -9.23997
+offset_bottom = 25.0447
+text = "240"
+label_settings = SubResource("LabelSettings_cbdg1")
+
+[node name="BlueDragonScale" type="Sprite2D" parent="CrocIdle"]
+modulate = Color(0, 0.709804, 0.454902, 1)
+position = Vector2(-1.47765, 11.8212)
+rotation = 3.14153
+scale = Vector2(0.82638, 0.82638)
+texture = ExtResource("3_h3rle")
+
+[node name="PlaceSoundEffect" parent="CrocIdle" instance=ExtResource("4_cyd55")]
+position = Vector2(-56.1506, -4.43294)
+scale = Vector2(1.49963, 1.46793)
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

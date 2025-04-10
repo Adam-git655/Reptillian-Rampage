@@ -1,0 +1,527 @@
+[gd_scene load_steps=26 format=3 uid="uid://btcdcpadtr6ry"]
+
+[ext_resource type="Texture2D" uid="uid://chje0d30mlk2r" path="res://Scenes and Scripts/crocodile/croc_attack.png" id="1_2qlvd"]
+[ext_resource type="Texture2D" uid="uid://cpumx7qd0oobx" path="res://Scenes and Scripts/crocodile/croc_idle.png" id="1_e7abu"]
+[ext_resource type="Script" path="res://Scenes and Scripts/crocodile/crocodile_tower.gd" id="1_tcahg"]
+[ext_resource type="Texture2D" uid="uid://bnux0463yu0f2" path="res://Game Assets/flying_dragon-1.1/blue_dragon_scale.png" id="4_v06ug"]
+[ext_resource type="AudioStream" uid="uid://yf0k7x0n8f7o" path="res://sound/buaya-220038.mp3" id="5_2bdh2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw8d2"]
+atlas = ExtResource("1_2qlvd")
+region = Rect2(0, 0, 189, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbyx5"]
+atlas = ExtResource("1_2qlvd")
+region = Rect2(189, 0, 189, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6no5"]
+atlas = ExtResource("1_2qlvd")
+region = Rect2(378, 0, 189, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcnfo"]
+atlas = ExtResource("1_2qlvd")
+region = Rect2(567, 0, 189, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2va7"]
+atlas = ExtResource("1_2qlvd")
+region = Rect2(756, 0, 189, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukgqh"]
+atlas = ExtResource("1_2qlvd")
+region = Rect2(945, 0, 189, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvuck"]
+atlas = ExtResource("1_2qlvd")
+region = Rect2(1134, 0, 189, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mje7k"]
+atlas = ExtResource("1_2qlvd")
+region = Rect2(1323, 0, 189, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp7o5"]
+atlas = ExtResource("1_2qlvd")
+region = Rect2(1512, 0, 189, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mheqt"]
+atlas = ExtResource("1_2qlvd")
+region = Rect2(1701, 0, 189, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omy8r"]
+atlas = ExtResource("1_e7abu")
+region = Rect2(0, 0, 189, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6btc"]
+atlas = ExtResource("1_e7abu")
+region = Rect2(189, 0, 189, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmi0s"]
+atlas = ExtResource("1_e7abu")
+region = Rect2(378, 0, 189, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lyfi"]
+atlas = ExtResource("1_e7abu")
+region = Rect2(567, 0, 189, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtnk7"]
+atlas = ExtResource("1_e7abu")
+region = Rect2(756, 0, 189, 189)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yschf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cw8d2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbyx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6no5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcnfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2va7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukgqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvuck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mje7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tp7o5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mheqt")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omy8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6btc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmi0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8lyfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtnk7")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x37f0"]
+size = Vector2(152, 61)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mfvmu"]
+radius = 294.065
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_px1jn"]
+bg_color = Color(1, 0.101961, 0, 1)
+corner_radius_top_left = 450
+corner_radius_top_right = 450
+corner_radius_bottom_right = 450
+corner_radius_bottom_left = 450
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bh7j"]
+size = Vector2(14, 88.8571)
+
+[node name="CrocodileTower" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_tcahg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(17, -79)
+sprite_frames = SubResource("SpriteFrames_yschf")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, -20.5)
+shape = SubResource("RectangleShape2D_x37f0")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_mfvmu")
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="VisibilityPlacementArea" type="Panel" parent="."]
+modulate = Color(0, 0, 0, 0.313726)
+offset_left = -294.0
+offset_top = -294.0
+offset_right = 295.0
+offset_bottom = 295.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_px1jn")
+
+[node name="Pre-AttackCircle" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+
+[node name="Scales" type="Node2D" parent="."]
+
+[node name="BlueDragonScale" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(-190, 144)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale2" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(-129, 166)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale3" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(-22, 178)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale4" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(-113, 230)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale5" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(-55, 231)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale6" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(-82, 189)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale7" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(-160, 85)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale8" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(-223, 48)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale9" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(-209, -11)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale10" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(-192, -70)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale11" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(-136, 27)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale12" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(-132, -96)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale13" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(-123, -44)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale14" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(-133, -189)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale15" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(-74, -121)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale17" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(-64, 68)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale18" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(-78, 129)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale19" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(12, 87)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale20" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(44, 166)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale21" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(74, 98)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale22" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(44, 227)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale23" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(105, 154)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale24" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(116, 228)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale25" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(143, 63)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale26" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(219, 117)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale27" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(161, 172)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale28" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(144, -18)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale29" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(227, 17)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale30" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(218, -100)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale31" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(127, -119)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale33" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(59, -119)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale34" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(-13, -118)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale35" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(-34, -173)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale36" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(-52, -221)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale37" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(29, -207)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale38" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(96, -222)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale39" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(20, -252)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale40" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(89, -164)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale41" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(192, -47)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale32" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(152, -196)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="BlueDragonScale16" type="Sprite2D" parent="Scales"]
+visible = false
+modulate = Color(0, 0.521569, 0.278431, 1)
+z_index = 2
+position = Vector2(-194, -141)
+rotation = 3.1281
+texture = ExtResource("4_v06ug")
+
+[node name="AttackSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_2bdh2")
+volume_db = 2.0
+
+[node name="TowerDetectionArea" type="Area2D" parent="."]
+process_mode = 3
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TowerDetectionArea"]
+position = Vector2(11.5714, 2)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_0bh7j")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="Pre-AttackCircle" to="." method="_on_pre_attack_circle_timeout"]

@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://dobnq6a7tfhrc"]
+
+[ext_resource type="PackedScene" uid="uid://djorglcqkct68" path="res://enemy_spawner.tscn" id="1_ccbbl"]
+[ext_resource type="Script" path="res://main.gd" id="1_uoen1"]
+[ext_resource type="Texture2D" uid="uid://cktvblc2ow78q" path="res://GMTK game background (1).png" id="2_lqkcm"]
+[ext_resource type="PackedScene" uid="uid://34sqg2qpy6j3" path="res://dragons_lair.tscn" id="3_sl7a0"]
+[ext_resource type="PackedScene" uid="uid://d4jtw0jd8jiei" path="res://ui.tscn" id="5_hadpl"]
+[ext_resource type="PackedScene" uid="uid://cjqtgmnlpe5wi" path="res://UpgradeGUI.tscn" id="6_2rhjl"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_uoen1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -2
+offset_right = 1153.0
+offset_bottom = 650.0
+size_flags_vertical = 0
+texture = ExtResource("2_lqkcm")
+
+[node name="EnemySpawner" parent="." instance=ExtResource("1_ccbbl")]
+
+[node name="DragonsLair" parent="." instance=ExtResource("3_sl7a0")]
+position = Vector2(72, 335)
+
+[node name="Reptiles" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="UI" parent="." instance=ExtResource("5_hadpl")]
+
+[node name="UpgradeGui" parent="." instance=ExtResource("6_2rhjl")]
+
+[connection signal="gui_input" from="TextureRect" to="." method="_on_texture_rect_gui_input"]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2ec5x0jyxu04"]
+
+[ext_resource type="AudioStream" uid="uid://bvm3i8bsksply" path="res://sound/risk-136788.mp3" id="1_yj5wb"]
+
+[node name="BGMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_yj5wb")
+autoplay = true

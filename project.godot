@@ -1,0 +1,36 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Reptilian Rampage"
+config/tags=PackedStringArray("propergame")
+run/main_scene="res://Scenes and Scripts/main_menu.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://Game Assets/icon.svg"
+
+[autoload]
+
+Main="*res://Scenes and Scripts/main.gd"
+
+[display]
+
+window/stretch/mode="viewport"
+
+[global_group]
+
+enemy=""
+red_dragon=""
+snake=""
+pirana=""
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

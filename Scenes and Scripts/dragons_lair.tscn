@@ -1,0 +1,526 @@
+[gd_scene load_steps=5 format=3 uid="uid://34sqg2qpy6j3"]
+
+[ext_resource type="Texture2D" uid="uid://73l0f3cs61rm" path="res://Game Assets/castle.png" id="1_bam2p"]
+[ext_resource type="Script" path="res://Scenes and Scripts/dragons_lair.gd" id="1_n07yq"]
+[ext_resource type="Texture2D" uid="uid://bnux0463yu0f2" path="res://Game Assets/flying_dragon-1.1/blue_dragon_scale.png" id="3_kdnr2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_614gl"]
+size = Vector2(477, 423)
+
+[node name="DragonsLair" type="StaticBody2D" groups=["DragonsLair"]]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_n07yq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -1.5)
+shape = SubResource("RectangleShape2D_614gl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bam2p")
+
+[node name="DecorationScales" type="Node2D" parent="."]
+scale = Vector2(3.365, 3.365)
+
+[node name="BlueDragonScale" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-68, 24)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale2" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-63, 21)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale3" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-66, 15)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale4" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-60, 24)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale5" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-65, 25)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale6" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-67, 19)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale7" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-72, 25)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale8" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-30, 27)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale9" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-26, 25)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale10" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-23, 21)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale11" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-21, 16)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale12" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-19, 21)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale13" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-16, 25)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale14" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-21, 26)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale15" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-14, 27)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale16" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(15, 28)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale17" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(18, 25)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale18" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(20, 22)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale19" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(23, 17)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale20" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(25, 21)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale21" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(27, 25)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale22" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(29, 26)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale23" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(24, 27)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale24" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(21, 26)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale25" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(22, 23)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale26" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(58, 28)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale27" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(60, 24)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale28" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(62, 20)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale29" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(65, 17)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale30" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(65, 21)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale31" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(64, 26)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale32" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(68, 25)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale33" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(69, 21)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale34" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(71, 27)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale35" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(40, -3.99999)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale36" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(36, -4)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale37" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(32, -4)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale38" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(28, -4)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale39" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(25, -4)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale40" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(28, -7)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale41" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(32, -8)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale42" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(36, -8)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale43" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(34, -12)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale44" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(30, -12)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale45" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(32, -15)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale46" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-26, -5)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale47" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-31, -4)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale48" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-36, -5)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale49" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-41, -5)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale50" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-37, -8)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale51" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-33, -7)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale52" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-28, -7)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale53" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-34, -11)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale54" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-31, -10)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale55" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-33, -14)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale56" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-12, -42)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale57" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-9, -42)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale58" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-6, -42)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale59" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-3, -42)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale60" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(0.999999, -42)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale61" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(5, -42)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale62" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(8, -42)
+rotation = -3.09901
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale63" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(11, -42)
+rotation = -2.70191
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale64" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(6, -46)
+rotation = -3.01288
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale65" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(2, -46)
+rotation = -3.01288
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale66" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-1, -46)
+rotation = -3.01288
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale67" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-5, -46)
+rotation = -3.01288
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale68" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-9, -46)
+rotation = -3.01288
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale69" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-6, -50)
+rotation = -3.01288
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale70" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-2, -51)
+rotation = -3.04715
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale71" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(2, -51)
+rotation = -3.04715
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale72" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(6, -50)
+rotation = -3.04715
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale73" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-3, -54)
+rotation = -3.04715
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale74" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(1, -53)
+rotation = -3.04715
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale75" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(3, -54)
+rotation = -3.04715
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale76" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-0.999999, -57)
+rotation = -3.04715
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale77" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-1, -61)
+rotation = -3.04715
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale78" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(2, -57)
+rotation = -3.04715
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale79" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-4, -57)
+rotation = -3.04715
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale80" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-4, -57)
+rotation = -3.04715
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale81" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-7, -53)
+rotation = -3.04715
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale82" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-10, -49)
+rotation = -3.04715
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale83" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(9, -46)
+rotation = -3.04715
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")
+
+[node name="BlueDragonScale84" type="Sprite2D" parent="DecorationScales"]
+position = Vector2(-14, -42)
+rotation = -3.04715
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kdnr2")

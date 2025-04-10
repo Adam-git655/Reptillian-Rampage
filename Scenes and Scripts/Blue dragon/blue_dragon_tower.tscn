@@ -1,0 +1,105 @@
+[gd_scene load_steps=12 format=3 uid="uid://b8v4ulmnabyq8"]
+
+[ext_resource type="Texture2D" uid="uid://dgbilkd4t2a7" path="res://Game Assets/flying_dragon-1.1/PNG/144x128/flying_twin_headed_dragon-blue.png" id="1_i5xgq"]
+[ext_resource type="Script" path="res://Scenes and Scripts/Blue dragon/blue_dragon_tower.gd" id="1_twcpv"]
+[ext_resource type="AudioStream" uid="uid://wfxe27fhiqy1" path="res://sound/bow_release-85040.mp3" id="3_bf7vr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwcv7"]
+atlas = ExtResource("1_i5xgq")
+region = Rect2(0, 0, 144, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw26q"]
+atlas = ExtResource("1_i5xgq")
+region = Rect2(144, 0, 144, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hep2"]
+atlas = ExtResource("1_i5xgq")
+region = Rect2(288, 0, 144, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wisx8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwcv7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jw26q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hep2")
+}],
+"loop": true,
+"name": &"IdleFly",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1taib"]
+size = Vector2(97, 90)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ti3l7"]
+radius = 298.575
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3otw0"]
+size = Vector2(32.8571, 60)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3yhv"]
+bg_color = Color(1, 0.101961, 0, 1)
+corner_radius_top_left = 450
+corner_radius_top_right = 450
+corner_radius_bottom_right = 450
+corner_radius_bottom_left = 450
+
+[node name="BlueDragonTower" type="StaticBody2D"]
+scale = Vector2(0.7, 0.7)
+collision_layer = 2
+script = ExtResource("1_twcpv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_wisx8")
+animation = &"IdleFly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 4)
+shape = SubResource("RectangleShape2D_1taib")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CircleShape2D_ti3l7")
+
+[node name="TowerDetectionArea" type="Area2D" parent="."]
+process_mode = 3
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TowerDetectionArea"]
+position = Vector2(-2.85715, 2.14286)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_3otw0")
+
+[node name="ScaleStartPoint" type="Marker2D" parent="."]
+position = Vector2(60, -1)
+
+[node name="DragonScalesContainer" type="Node" parent="."]
+
+[node name="ScaleShootTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="VisibilityPlacementArea" type="Panel" parent="."]
+modulate = Color(0, 0, 0, 0.313726)
+offset_left = -294.286
+offset_top = -294.286
+offset_right = 295.714
+offset_bottom = 295.714
+theme_override_styles/panel = SubResource("StyleBoxFlat_t3yhv")
+
+[node name="Shoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_bf7vr")
+volume_db = 5.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="ScaleShootTimer" to="." method="_on_scale_shoot_timer_timeout"]

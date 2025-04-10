@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://io78lkc7lsdi"]
+
+[ext_resource type="Script" path="res://Scenes and Scripts/Blue dragon/blue_dragon_scale.gd" id="1_hihth"]
+[ext_resource type="Texture2D" uid="uid://bnux0463yu0f2" path="res://Game Assets/flying_dragon-1.1/blue_dragon_scale.png" id="2_okfjm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3lsq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56ac2"]
+size = Vector2(27, 24)
+
+[node name="BlueDragonScale" type="CharacterBody2D"]
+script = ExtResource("1_hihth")
+
+[node name="BlueDragonScale" type="Sprite2D" parent="."]
+rotation = -1.5708
+texture = ExtResource("2_okfjm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_h3lsq")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_56ac2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

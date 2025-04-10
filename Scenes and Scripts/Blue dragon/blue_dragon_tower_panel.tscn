@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://xv77gxdwgxvm"]
+
+[ext_resource type="Script" path="res://Scenes and Scripts/Blue dragon/blue_dragon_tower_panel.gd" id="1_5am1q"]
+[ext_resource type="Texture2D" uid="uid://dgbilkd4t2a7" path="res://Game Assets/flying_dragon-1.1/PNG/144x128/flying_twin_headed_dragon-blue.png" id="2_lpt1i"]
+[ext_resource type="Texture2D" uid="uid://bnux0463yu0f2" path="res://Game Assets/flying_dragon-1.1/blue_dragon_scale.png" id="3_f8vgd"]
+[ext_resource type="PackedScene" uid="uid://ba4xsymc0kfh3" path="res://Scenes and Scripts/place_sound_effect.tscn" id="4_jbyw6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iig2f"]
+font_size = 20
+
+[node name="BlueDragonTowerPanel" type="Panel"]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_5am1q")
+
+[node name="FlyingTwinHeadedDragon-blue" type="Sprite2D" parent="."]
+position = Vector2(40, 47)
+scale = Vector2(0.597656, 0.597656)
+texture = ExtResource("2_lpt1i")
+hframes = 3
+vframes = 4
+frame = 2
+
+[node name="TowerPrice" type="Label" parent="FlyingTwinHeadedDragon-blue"]
+offset_left = -60.2354
+offset_top = -78.6405
+offset_right = -8.23536
+offset_bottom = -43.6405
+text = "120
+"
+label_settings = SubResource("LabelSettings_iig2f")
+
+[node name="BlueDragonScale" type="Sprite2D" parent="FlyingTwinHeadedDragon-blue"]
+position = Vector2(-11.7124, -65.2549)
+rotation = 3.14153
+scale = Vector2(0.877586, 0.867221)
+texture = ExtResource("3_f8vgd")
+
+[node name="PlaceSoundEffect" parent="FlyingTwinHeadedDragon-blue" instance=ExtResource("4_jbyw6")]
+position = Vector2(-66.9281, -78.6406)
+scale = Vector2(1.6981, 1.6622)
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

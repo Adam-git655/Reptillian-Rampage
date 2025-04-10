@@ -1,0 +1,124 @@
+[gd_scene load_steps=9 format=3 uid="uid://d4jtw0jd8jiei"]
+
+[ext_resource type="Script" path="res://Scenes and Scripts/ui.gd" id="1_ds02p"]
+[ext_resource type="PackedScene" uid="uid://xv77gxdwgxvm" path="res://Scenes and Scripts/Blue dragon/blue_dragon_tower_panel.tscn" id="1_viwio"]
+[ext_resource type="PackedScene" uid="uid://4evuenbrs3wm" path="res://Scenes and Scripts/komodo_dragon/komodo_dragon_tower_panel.tscn" id="3_itdf5"]
+[ext_resource type="PackedScene" uid="uid://btaca3ms83p7o" path="res://Scenes and Scripts/crocodile/crocodile_tower_panel.tscn" id="4_63pum"]
+[ext_resource type="Texture2D" uid="uid://c8vy5qdses2q0" path="res://Game Assets/trash.png" id="5_sstpy"]
+[ext_resource type="Texture2D" uid="uid://b2i5seyawmqid" path="res://Game Assets/arrow-removebg-preview.png" id="6_rys7o"]
+[ext_resource type="Texture2D" uid="uid://bnux0463yu0f2" path="res://Game Assets/flying_dragon-1.1/blue_dragon_scale.png" id="6_y8neq"]
+[ext_resource type="FontFile" uid="uid://cj1eebyvce80v" path="res://fonts/DragonWings-DOMWm.ttf" id="8_etuhd"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_ds02p")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -93.0
+offset_right = 573.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 10
+
+[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 5.0
+offset_right = 1142.0
+offset_bottom = 88.0
+theme_override_constants/h_separation = 20
+
+[node name="BlueDragonTowerPanel" parent="Panel/FlowContainer" instance=ExtResource("1_viwio")]
+layout_mode = 2
+
+[node name="KomodoDragonTowerPanel" parent="Panel/FlowContainer" instance=ExtResource("3_itdf5")]
+layout_mode = 2
+
+[node name="CrocodileTowerPanel" parent="Panel/FlowContainer" instance=ExtResource("4_63pum")]
+layout_mode = 2
+
+[node name="Trash" type="Sprite2D" parent="Panel"]
+position = Vector2(1004.63, 39.625)
+scale = Vector2(3.16406, 3.16406)
+texture = ExtResource("5_sstpy")
+
+[node name="DownButton" type="Button" parent="."]
+offset_left = 1148.0
+offset_top = 649.0
+offset_right = 1216.0
+offset_bottom = 741.0
+rotation = -3.13141
+theme_override_font_sizes/font_size = 50
+text = "
+"
+icon = ExtResource("6_rys7o")
+icon_alignment = 1
+expand_icon = true
+
+[node name="UpButton" type="Button" parent="."]
+offset_left = 1114.0
+offset_top = 560.0
+offset_right = 1152.0
+offset_bottom = 645.0
+theme_override_font_sizes/font_size = 55
+icon = ExtResource("6_rys7o")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ScalesLabel" type="Label" parent="."]
+offset_left = 55.0
+offset_top = 25.0
+offset_right = 189.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_etuhd")
+theme_override_font_sizes/font_size = 40
+text = "Scales: "
+
+[node name="BlueDragonScale" type="Sprite2D" parent="ScalesLabel"]
+position = Vector2(-20, 21)
+rotation = -3.14894
+scale = Vector2(1.70164, 1.70164)
+texture = ExtResource("6_y8neq")
+
+[node name="HealthLabel" type="Label" parent="."]
+offset_left = 55.0
+offset_top = 87.0
+offset_right = 235.0
+offset_bottom = 133.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_etuhd")
+theme_override_font_sizes/font_size = 40
+text = "Lair Health: "
+
+[node name="BlueDragonScale" type="Sprite2D" parent="HealthLabel"]
+modulate = Color(0.941176, 0.286275, 0.360784, 1)
+position = Vector2(-20, 21)
+rotation = -3.14894
+scale = Vector2(1.70164, 1.70164)
+texture = ExtResource("6_y8neq")
+
+[node name="WaveLabel" type="Label" parent="."]
+offset_left = 400.0
+offset_top = 242.0
+offset_right = 717.0
+offset_bottom = 396.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_etuhd")
+theme_override_font_sizes/font_size = 80
+text = "WAVE 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WaveLabelShowTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="pressed" from="DownButton" to="." method="_on_down_button_pressed"]
+[connection signal="pressed" from="UpButton" to="." method="_on_up_button_pressed"]
+[connection signal="timeout" from="WaveLabelShowTimer" to="." method="_on_wave_label_show_timer_timeout"]
